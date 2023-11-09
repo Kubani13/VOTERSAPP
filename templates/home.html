@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content%}
+
+<style>
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+.card-text{
+  flex-grow:1;
+}
+.hover_me:hover{
+  cursor: pointer;
+ 
+}
+/* .hover_img{
+  transform: scale(1.1)
+} */
+@media only screen and (max-width: 1200px) {
+  .column {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <div style="text-align: center;;">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<div class="container mt-5 text-center">
+    <h3>Election Candidate</h3>
+</div>
+
+<div class="container">
+    <div class="row my-5">
+        {% for candidate in candidates %}
+        <div class="column hover_me">
+          <div class="card col p-0" style="width: 18rem;">
+            <img src="{{ url_for('static', filename = 'images/candidate.jpg') }}" class="card-img-top hover_img" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{candidate.name}}</h5>
+                <p class="card-text">{{candidate.manifesto.split()[:10] | join(' ') }}</p>
+            
+                <a href="/vote/{{candidate.id}}" class="btn btn-success">VOTE</a>
+            </div>
+        </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

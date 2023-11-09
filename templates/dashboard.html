@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <div style="text-align: center;;">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<div class="container d-flex flex-column align-items-center justify-content-center">
+    <h3 class="my-5">Voting Results</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Candidate Name</th>
+                <th>Votes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for candidate in candidates %}
+            <tr>
+                <td>{{ candidate.name }}</td>
+                <td>{{ candidate.votes }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

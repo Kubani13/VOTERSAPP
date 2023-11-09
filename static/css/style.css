@@ -1,0 +1,66 @@
+/* STYLING THE HEADER */
+#header-container{
+    width: 90vw;
+}
+
+/* STYLING THE FOOTER */
+#footer{
+    position: relative;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+}
+
+/* FORM STYLING */
+html,
+body {
+  height: 100%;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 1rem;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* Styling the rows */
+tr {
+  border-bottom: 1px solid #ccc; /* You can adjust the color and thickness as needed */
+  margin: 40px !important;
+}
+td {
+  margin-bottom: 10px; /* Adjust the margin as needed */
+  padding: 10px; /* Adjust the padding as needed */
+}
+tr:last-child {
+  border-bottom: none;
+}
+th {
+  margin-bottom: 20px; /* Adjust the margin as needed */
+  padding: 20px; /* Adjust the padding as needed */
+}
+
+
+/* Styling the cards */
+.card {
+  margin : 20px
+}
+
+.btn-group{
+  cursor: pointer;
+}
